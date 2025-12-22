@@ -1,6 +1,6 @@
 extends Node
 
-const VERSION_NUMBER := "v1.2.3"
+const VERSION_NUMBER := "v1.2.4"
 
 ## Holds any value you may want accessible globally and quickly
 
