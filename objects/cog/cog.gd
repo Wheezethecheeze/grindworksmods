@@ -166,7 +166,8 @@ func roll_for_level() -> void:
 		level = RNG.channel(RNG.ChannelCogLevels).randi_range(custom_level_range.x, custom_level_range.y)
 	
 	# Allow for Cogs to be higher/lower level than the floor intends
-	level = custom_level_range.y + level_range_offset
+	if not signi(level_range_offset) == 0:
+		level = custom_level_range.y + level_range_offset
 
 func roll_for_dna() -> void:
 	pool = Globals.GRUNT_COG_POOL  # Default

@@ -98,6 +98,7 @@ func sync_settings() -> void:
 		print('FPS Limit set to: %s' % FPSOptions[fps_idx])
 	RenderingServer.viewport_set_msaa_3d(SaveFileService.get_viewport().get_viewport_rid(),
 				RenderingServer.VIEWPORT_MSAA_4X if anti_aliasing else RenderingServer.VIEWPORT_MSAA_DISABLED)
+	Globals.s_colorblind_mode_changed.emit(ColorBlindOptions[ColorBlindOptions.keys()[color_blind_mode]])
 	
 	# Audio
 	set_bus_volume('Master', linear_to_db(master_volume))

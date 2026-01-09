@@ -50,6 +50,8 @@ var pos : Vector2i
 var collision_box : BoxShape3D
 var select_mesh : MeshInstance3D
 var color_maps: Dictionary
+var mesh_: Mesh:
+	get: return mesh
 
 # Signals
 signal s_player_entered(panel : PuzzlePanel)
@@ -80,7 +82,8 @@ func _ready() -> void:
 	select_mesh.hide()
 	
 	Globals.s_colorblind_mode_changed.connect(on_colorblind_mode_changed)
-	await get_tree().process_frame
+	while not mesh:
+		await get_tree().process_frame
 	on_colorblind_mode_changed(SaveFileService.settings_file.get_color_blind_mapping())
 
 func set_alpha(alpha : float) -> void:
@@ -115,6 +118,7 @@ func set_color(color: Color) -> void:
 		s_color_changed.emit(color)
 
 func get_color() -> Color:
+	if not mesh: return Color.WHITE
 	return mesh.surface_get_material(0).albedo_color
 
 var fade_tween : Tween
@@ -143,13 +147,21 @@ func on_colorblind_mode_changed(new_mode: Dictionary) -> void:
 	if select_mesh.mesh.surface_get_material(0).albedo_color in color_maps.values():
 		select_mesh.mesh.surface_get_material(0).albedo_color = color_maps.find_key(select_mesh.mesh.surface_get_material(0).albedo_color)
 	
+	# Panel shape might be nothing. Return if so
+	if panel_shape == PanelShape.NOTHING:
+		color_maps = new_mode
+		return
+	
 	# Get our base color, ignoring alpha
 	var base_color := get_color()
 	base_color.a = 1.0
+	if base_color == Color.TURQUOISE:
+		pass
 	# Undo previous mapping if applicable
 	if base_color in color_maps.values():
 		var new_color: Color = color_maps.find_key(base_color)
 		new_color.a = get_alpha()
+		color_maps = {}
 		set_color(new_color)
 	
 	# Now, resync the select mesh

@@ -18,5 +18,9 @@ Fixed Skelecog department emblems not displaying properly
 [TITLE]Cog Creator
 Custom Cogs now support custom skelecog tie textures (only through manual editing, the attribute name is \"custom_skelecog_tie_tex\")
 [TITLE]For Modders
-The level_range_offset value on Cogs now correctly scales into the negatives"
+The level_range_offset value on Cogs now correctly scales into the negatives
+[TITLE]Hotfix #1
+Fixed a crash related to the new colorblind D.A. Office puzzles
+[TITLE]Hotfix #2
+Fixed an issue where Cogs would only spawn at the highest level in facilities"
 metadata/_custom_type_script = "uid://d1j0hh6tsgy0r"
