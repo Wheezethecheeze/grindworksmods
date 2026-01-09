@@ -24,6 +24,7 @@ enum SuitType {
 @export_custom(GameLoader.FILE, GameLoader.TEXTURE) var custom_hand_tex: String
 @export_custom(GameLoader.FILE, GameLoader.TEXTURE) var custom_shoe_tex: String
 @export_custom(GameLoader.FILE, GameLoader.TEXTURE) var custom_emblem_tex: String
+@export_custom(GameLoader.FILE, GameLoader.TEXTURE) var custom_skelecog_tie_tex: String
 
 @export var cog_name: String = "Cog"
 @export var name_plural: String = ""
@@ -63,6 +64,7 @@ enum SuitType {
 	custom_hand_tex = "",
 	custom_shoe_tex = "",
 	custom_emblem_tex = "",
+	custom_skelecog_tie_tex = "",
 }
 
 const DEFAULT_HEAD := "res://models/cogs/heads/flunky.glb"
@@ -216,6 +218,7 @@ const PATH_ATTRIBUTE_LIST : Array[String] = [
 	"custom_hand_tex",
 	"custom_shoe_tex",
 	"custom_emblem_tex",
+	"custom_skelecog_tie_tex",
 	"head_textures",
 	"head",
 	"attacks",

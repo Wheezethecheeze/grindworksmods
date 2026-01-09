@@ -165,11 +165,8 @@ func roll_for_level() -> void:
 			custom_level_range = Vector2i(dna.level_low, dna.level_high)
 		level = RNG.channel(RNG.ChannelCogLevels).randi_range(custom_level_range.x, custom_level_range.y)
 	
-	# Allow for Cogs to be higher level than the floor intends
-	if sign(level_range_offset) == 1:
-		level = custom_level_range.y + level_range_offset
-	elif sign(level_range_offset) == -1:
-		level = (custom_level_range.y - level_range_offset) + 1
+	# Allow for Cogs to be higher/lower level than the floor intends
+	level = custom_level_range.y + level_range_offset
 
 func roll_for_dna() -> void:
 	pool = Globals.GRUNT_COG_POOL  # Default

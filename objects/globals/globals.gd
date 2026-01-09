@@ -606,6 +606,7 @@ signal s_slendercog_boss_initialized(directory: Node3D)
 signal s_shop_spawned(shop: ToonShop)
 signal s_game_win
 signal s_im_stuck
+signal s_colorblind_mode_changed(new_mode: Dictionary)
 #endregion
 
 
@@ -615,7 +616,7 @@ var custom_seeds: Dictionary[String, Variant] = {
 	# Guaranteed Motorcycle Boots (hi boots)
 	"boots": "res://objects/items/resources/custom_seeds/seed_boots.tres",
 	
-	# Start with 1 laff
+	# Start with 1 laff, terrible stats
 	"maxtoon": "res://objects/items/resources/custom_seeds/seed_maxtoon.tres",
 	
 	# Start with +3 Anomaly Boost
@@ -627,13 +628,13 @@ var custom_seeds: Dictionary[String, Variant] = {
 	# Play with a mirrored camera
 	"mirror": "res://objects/items/resources/custom_seeds/seed_mirror.tres",
 	
-	# Fake "Authenticating..." screen
+	# Fake "Connecting..." screen
 	"multiplayer": "res://objects/items/resources/custom_seeds/seed_multiplayer.tres",
 	
 	# All grunt Cogs are proxies
 	"proxy": "res://objects/items/resources/custom_seeds/seed_proxy.tres",
 	
-	# All Cogs say "I'm neoNote" when battle starts
+	# Haunted by the phrase: "I'm neoNote."
 	"neonote": "res://objects/items/resources/custom_seeds/seed_neonote.tres",
 	
 	# Mouse shopkeeper every floor :)
@@ -654,9 +655,10 @@ var custom_seeds: Dictionary[String, Variant] = {
 	# Sends you to heaven
 	"sketched": "res://objects/items/resources/custom_seeds/seed_sketched.tres",
 	
-	# Purple filter
+	# Purple filter, Toon emits a purple glow
 	"lavender": "res://objects/items/resources/custom_seeds/seed_lavender.tres",
 	
+	# Golden Goose is added as a grunt Cog
 	"misty": "res://objects/items/resources/custom_seeds/seed_misty.tres",
 	
 	# Mirrored AND Blackout (we hate you)
