@@ -122,6 +122,7 @@ const TOON_UNLOCK_ORDER_PATHS := [
 var ADDITIONAL_TOON_PATHS := [
 	'res://objects/player/characters/professor_pete.tres',
 	'res://objects/player/characters/lil_oldman.tres',
+	'res://objects/player/characters/gold.tres',
 ]
 
 func fetch_toon_unlock_order() -> Array[PlayerCharacter]:

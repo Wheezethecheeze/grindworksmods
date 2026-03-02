@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="PlayerCharacter" format=3 uid="uid://deysqa303lify"]
+
+[ext_resource type="Script" uid="uid://combwqypom1ru" path="res://objects/items/classes/item.gd" id="1_ji3j5"]
+[ext_resource type="Script" uid="uid://o2fe7ud1faj6" path="res://objects/battle/battle_resources/stats.gd" id="3_4204w"]
+[ext_resource type="Script" uid="uid://c8kas2j4io1jh" path="res://objects/toon/clothing/toon_bottoms.gd" id="4_vq2kv"]
+[ext_resource type="Texture2D" uid="uid://bc47fggqh8gbp" path="res://models/toon/textures/clothes/shorts/desat_shorts_2.png" id="5_ji3j5"]
+[ext_resource type="Script" uid="uid://yg7gxug4rab" path="res://objects/toon/toon_dna.gd" id="6_2y7d1"]
+[ext_resource type="Script" uid="uid://dfqwh4jmdy0iw" path="res://objects/toon/clothing/toon_shirt.gd" id="7_bb15x"]
+[ext_resource type="Texture2D" uid="uid://btv1s8ehhsav7" path="res://models/toon/textures/clothes/shirts/desat_shirt_13.png" id="8_ne1df"]
+[ext_resource type="Texture2D" uid="uid://s1qs5drdvvk1" path="res://models/toon/textures/clothes/shirts/desat_sleeve_3.png" id="9_ji3j5"]
+[ext_resource type="Resource" uid="uid://tyi7ukxtvcgc" path="res://objects/battle/battle_resources/gag_loadouts/loadouts/standard_loadout.tres" id="10_5iejm"]
+[ext_resource type="Script" uid="uid://ts8xpgftpmty" path="res://objects/player/character.gd" id="11_dsjk6"]
+[ext_resource type="Resource" uid="uid://ci7shc77lxvwr" path="res://objects/items/resources/passive/flippy_setup.tres" id="11_sskm3"]
+
+[sub_resource type="Resource" id="Resource_jj61k"]
+script = ExtResource("3_4204w")
+
+[sub_resource type="Resource" id="Resource_ugrs1"]
+script = ExtResource("4_vq2kv")
+texture = ExtResource("5_ji3j5")
+base_color = Color(0.25390646, 0.5060451, 0.18790284, 1)
+
+[sub_resource type="Resource" id="Resource_2lryd"]
+script = ExtResource("7_bb15x")
+shirt_texture = ExtResource("8_ne1df")
+sleeve_texture = ExtResource("9_ji3j5")
+base_color = Color(0.25490198, 0.5058824, 0.1882353, 1)
+sleeve_color = Color(0.25490198, 0.5058824, 0.1882353, 1)
+
+[sub_resource type="Resource" id="Resource_ax4gq"]
+script = ExtResource("6_2y7d1")
+body_type = 2
+leg_type = 1
+species = 3
+head_index = 3
+head_color = Color(0.9372549, 0.7529412, 0.14901961, 1)
+torso_color = Color(0.9372549, 0.7529412, 0.14901961, 1)
+leg_color = Color(0.9372549, 0.7529412, 0.14901961, 1)
+shirt = SubResource("Resource_2lryd")
+bottoms = SubResource("Resource_ugrs1")
+
+[resource]
+script = ExtResource("11_dsjk6")
+character_name = "Gold"
+character_summary = "Can revive once before going sad
+5% base Throw boost"
+character_blurb = "Golden Goose?? real???"
+dna = SubResource("Resource_ax4gq")
+gag_loadout = ExtResource("10_5iejm")
+starting_laff = 30
+starting_items = Array[ExtResource("1_ji3j5")]([ExtResource("11_sskm3")])
+base_stats = SubResource("Resource_jj61k")
+starting_gags = Dictionary[String, int]({
+"Drop": 2,
+"Lure": 0,
+"Sound": 0,
+"Squirt": 0,
+"Throw": 0,
+"Trap": 0
+})
+additional_stats = Dictionary[String, Variant]({
+"luck": 1.05
+})
