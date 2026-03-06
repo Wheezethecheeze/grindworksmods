@@ -63,8 +63,8 @@ func exit_pressed() -> void:
 	s_exit.emit()
 
 func refresh() -> void:
-	var buttons: Dictionary = %GagPanel.get_buttons()
 	%GagPanel.refresh()
+	var buttons: Dictionary = %GagPanel.get_buttons()
 	for button: GagButton in buttons.keys():
 		if buttons[button] in alt_gags.values(): button.enable()
 		else: button.disable()
