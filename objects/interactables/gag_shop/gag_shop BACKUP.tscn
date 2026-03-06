@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://bobgkiuylr6li"]
+[gd_scene format=3 uid="uid://bix2bmoa0qb1f"]
 
-[ext_resource type="Script" uid="uid://b0rwe0678oer" path="res://objects/interactables/gag_shop/gag_shop.gd" id="1_ob2px"]
-[ext_resource type="PackedScene" uid="uid://dvslagwd6sk4r" path="res://objects/props/etc/shop_counter.tscn" id="1_ulq0q"]
-[ext_resource type="PackedScene" uid="uid://cy4iox7mj5ei0" path="res://objects/toon/toon.tscn" id="2_bii4a"]
-[ext_resource type="Resource" uid="uid://cxerjvm8uuf53" path="res://objects/items/custom/seed_logic/ooowodna.tres" id="4_8g4yy"]
+[ext_resource type="Script" uid="uid://b0rwe0678oer" path="res://objects/interactables/gag_shop/gag_shop.gd" id="1_ndp10"]
+[ext_resource type="PackedScene" uid="uid://dvslagwd6sk4r" path="res://objects/props/etc/shop_counter.tscn" id="2_f2kkn"]
+[ext_resource type="PackedScene" uid="uid://cy4iox7mj5ei0" path="res://objects/toon/toon.tscn" id="3_ik7wh"]
+[ext_resource type="Resource" uid="uid://cxerjvm8uuf53" path="res://objects/items/custom/seed_logic/ooowodna.tres" id="4_db1vq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bii4a"]
 size = Vector3(3.75098, 0.639999, 0.426056)
@@ -12,9 +12,9 @@ size = Vector3(3.75098, 0.639999, 0.426056)
 size = Vector3(3.686, 1.3689, 0.980285)
 
 [node name="GagShop" type="Node3D" unique_id=1401424975]
-script = ExtResource("1_ob2px")
+script = ExtResource("1_ndp10")
 
-[node name="shop_counter" parent="." unique_id=1999888225 instance=ExtResource("1_ulq0q")]
+[node name="shop_counter" parent="." unique_id=1999888225 instance=ExtResource("2_f2kkn")]
 
 [node name="CounterCollision" type="StaticBody3D" parent="." unique_id=649197965]
 
@@ -22,10 +22,10 @@ script = ExtResource("1_ob2px")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13623, 0.299568, 0.154861)
 shape = SubResource("BoxShape3D_bii4a")
 
-[node name="ShopKeeper" parent="CounterCollision" unique_id=2023377090 instance=ExtResource("2_bii4a")]
+[node name="ShopKeeper" parent="." unique_id=1897311916 instance=ExtResource("3_ik7wh")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.650361)
-toon_dna = ExtResource("4_8g4yy")
+toon_dna = ExtResource("4_db1vq")
 auto_build = true
 
 [node name="ShopCam" type="Camera3D" parent="." unique_id=1348511032]
