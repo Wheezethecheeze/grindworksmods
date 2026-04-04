@@ -12,7 +12,7 @@ var WANT_DEBUG_BOSSES := false
 var DEBUG_FORCE_BOSS_ONE: CogDNA = load("res://objects/cog/presets/lawbot/whistleblower.tres")
 var DEBUG_FORCE_BOSS_TWO: CogDNA = load("res://objects/cog/presets/bossbot/union_buster.tres")
 
-var MUSIC_TRACK: AudioStream = load("res://audio/music/Bossbot_Entry_v2.ogg")
+var MUSIC_TRACK: AudioStream = load("res://audio/music/encntr_penultimate/pre_getw.ogg")
 
 @export var possible_bosses: Array[CogDNA] = []
 

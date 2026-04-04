@@ -35,7 +35,8 @@
 [ext_resource type="Resource" uid="uid://8vrd8njnj2uk" path="res://objects/items/pools/stranger_items.tres" id="33_2ci3j"]
 [ext_resource type="PackedScene" uid="uid://41xnxhujwml4" path="res://objects/interactables/stranger/shop_ui/stranger_ui.tscn" id="34_hfot2"]
 [ext_resource type="Texture2D" uid="uid://dw0ovgcnsmkqi" path="res://objects/misc/spotlight_1.png" id="34_m718k"]
-[ext_resource type="PackedScene" uid="uid://bobgkiuylr6li" path="res://objects/interactables/gag_shop/gag_shop.tscn" id="36_3lvyb"]
+[ext_resource type="PackedScene" uid="uid://bikjmwaobodpf" path="res://objects/interactables/gag_shop/gag_shop_plagiarist.tscn" id="36_qncen"]
+[ext_resource type="PackedScene" uid="uid://c6i7vwfl3cc6r" path="res://objects/interactables/gag_shop/assets/gag_shop_sign.tscn" id="37_fcphk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4gs0"]
 resource_name = "cog_building_floor1_12"
@@ -769,8 +770,11 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_58gd2")
 draw_pass_1 = SubResource("QuadMesh_fjsci")
 
-[node name="GagShop" parent="." index="33" unique_id=2011769712 instance=ExtResource("36_3lvyb")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.6744103, -0.014617354, 0.08437729)
+[node name="GagShop" parent="." index="33" unique_id=1401424975 instance=ExtResource("36_qncen")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.637425, -0.01172471, 0.0071297884)
+
+[node name="GagShopSign" parent="." index="34" unique_id=1188206981 instance=ExtResource("37_fcphk")]
+transform = Transform3D(-3.9777365e-08, 0, -0.91, 0, 0.91, 0, 0.91, 0, -3.9777365e-08, 9.04951, 3.8138337, -0.0008917451)
 
 [connection signal="s_interacted" from="StrangerShop/Stranger" to="." method="on_shop_interact"]
 [connection signal="s_exit" from="StrangerShop/StrangerUI" to="." method="run_shop_exit"]
